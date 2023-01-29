@@ -64,7 +64,7 @@ class _HomePageState extends StateMVC {
                 Text(
                   "#",
                   style: TextStyle(
-                    fontWeight: FontWeight.w900
+                    fontWeight: FontWeight.w900,
                   ),
                 ),
                 Text(
@@ -158,6 +158,9 @@ class _HomePageState extends StateMVC {
             margin: EdgeInsets.only(right: 100),
           child:Text(
             index.toString(),
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+            ),
           ),
           ),
          Container(
@@ -169,11 +172,19 @@ class _HomePageState extends StateMVC {
                padding: EdgeInsets.only(right: 5),
                 child: Text(
                    state["name"].toString(),
+                  style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                  )
                  ),
              )
              ,
              Text(
                state["symbol"].toString(),
+               style: TextStyle(
+                 color: Color.fromRGBO(0, 0, 0, 0.4),
+                 fontSize: 12,
+                 fontWeight: FontWeight.w700
+               ),
              ),
 
            ],
@@ -184,6 +195,9 @@ class _HomePageState extends StateMVC {
           margin: EdgeInsets.only(right: 80),
           child:Text(
             "\$ " + state["values"]["USD"]["price"].toString().substring(0,7),
+              style: TextStyle(
+              fontWeight: FontWeight.w700,
+          ),
           ),
           ),
           Container(
@@ -193,6 +207,9 @@ class _HomePageState extends StateMVC {
             state["values"]["USD"]["percentChange24h"].toString().contains("-") ?
             state["values"]["USD"]["percentChange24h"].toString() + " %":
             "+" + state["values"]["USD"]["percentChange24h"].toString() + " %",
+              style: TextStyle(
+              fontWeight: FontWeight.w700,
+          ),
           ),
           ),
           Container(
@@ -201,7 +218,10 @@ class _HomePageState extends StateMVC {
           child:Text(
               state["values"]["USD"]["marketCap"] > 100000000000 ?
             state["values"]["USD"]["marketCap"].toString().substring(0,3) + "," + state["values"]["USD"]["marketCap"].toString().substring(4,6) + "B" :
-              state["values"]["USD"]["marketCap"].toString().substring(0,2) + "," + state["values"]["USD"]["marketCap"].toString().substring(3,5) + "B"
+              state["values"]["USD"]["marketCap"].toString().substring(0,2) + "," + state["values"]["USD"]["marketCap"].toString().substring(3,5) + "B",
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+            ),
           ),
           ),
           Container(
@@ -212,7 +232,10 @@ class _HomePageState extends StateMVC {
               state["values"]["USD"]["volume24h"].toString().substring(0,2) + "," + state["values"]["USD"]["volume24h"].toString().substring(3,5) + "B" :
               state["values"]["USD"]["volume24h"] > 1000000000 ?
               state["values"]["USD"]["volume24h"].toString().substring(0,1) + "," + state["values"]["USD"]["volume24h"].toString().substring(2,4) + "B" :
-              state["values"]["USD"]["volume24h"].toString().substring(0,3) + "," + state["values"]["USD"]["marketCap"].toString().substring(4,6) + "M"
+              state["values"]["USD"]["volume24h"].toString().substring(0,3) + "," + state["values"]["USD"]["marketCap"].toString().substring(4,6) + "M",
+              style: TextStyle(
+                fontWeight: FontWeight.w700,
+              ),
 
           ),
           ),
@@ -220,7 +243,10 @@ class _HomePageState extends StateMVC {
             width: 55,
           margin: EdgeInsets.only(right: 165),
           child:Text(
-         (state["values"]["USD"]["volume24h"] / state["values"]["USD"]["marketCap"]).toString().substring(0,5)
+         (state["values"]["USD"]["volume24h"] / state["values"]["USD"]["marketCap"]).toString().substring(0,5),
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+            ),
           ),
           ),
           Text(
@@ -230,7 +256,10 @@ class _HomePageState extends StateMVC {
            state["circulatingSupply"].toString().substring(0,2) + "," + state["circulatingSupply"].toString().substring(3,5) + "B" :
             state["circulatingSupply"] > 1000000000 ?
             state["circulatingSupply"].toString().substring(0,1) + "," + state["circulatingSupply"].toString().substring(2,4) + "B" :
-            state["circulatingSupply"].toString().substring(0,3) + "," + state["circulatingSupply"].toString().substring(4,6) + "M"
+            state["circulatingSupply"].toString().substring(0,3) + "," + state["circulatingSupply"].toString().substring(4,6) + "M",
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+            ),
           ),
         ],
     ),
